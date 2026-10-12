@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="Cj2LLUOh0V1YhCQ57HR5" name="Sayfa-1">
+    <mxGraphModel dx="710" dy="388" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="text;html=1;align=center;fontFamily=Arial;fontSize=14;fontStyle=1;fontColor=#1F4E79;" value="Record Protocol — AES-256-GCM Sequence Diagram" vertex="1">
+          <mxGeometry height="35" width="870" x="150" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontFamily=Arial;fontSize=11;arcSize=8;" value="Client Record Layer" vertex="1">
+          <mxGeometry height="45" width="200" x="50" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontFamily=Arial;fontSize=11;arcSize=8;" value="Server Record Layer" vertex="1">
+          <mxGeometry height="45" width="200" x="920" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#AAAAAA;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="105" as="sourcePoint" />
+            <mxPoint x="150" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#AAAAAA;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="105" as="sourcePoint" />
+            <mxPoint x="1020" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30" parent="1" style="rounded=1;fillColor=#FFD966;strokeColor=#C8A000;fontFamily=Arial;fontSize=10;arcSize=4;" value="Record Layer (AES-256-GCM)" vertex="1">
+          <mxGeometry height="32" width="390" x="390" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="40" parent="1" style="rounded=1;fillColor=#F5F5F5;strokeColor=#666666;fontFamily=Arial;fontSize=9;align=left;" value="ENCRYPT:&#xa;nonce = iv_cs_base(8B) || seq_send(4B)&#xa;AAD   = msg_type(1B) || seq_send(4B)&#xa;→ AES-256-GCM encrypt(key=k_cs, 256-bit)" vertex="1">
+          <mxGeometry height="70" width="300" x="10" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="41" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;fontFamily=Arial;fontSize=9;fontColor=#444444;" value="Frame: len(4B) | msg_type(1B) | ciphertext | tag(16B)  →  overhead = 21B constant">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="255" as="sourcePoint" />
+            <mxPoint x="1020" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="50" parent="1" style="rounded=1;fillColor=#F5F5F5;strokeColor=#666666;fontFamily=Arial;fontSize=9;align=left;" value="DECRYPT:&#xa;nonce = iv_cs_base(8B) || seq_rcv(4B)&#xa;AAD   = msg_type(1B) || seq_rcv(4B)&#xa;→ AES-256-GCM decrypt(key=k_cs, 256-bit)" vertex="1">
+          <mxGeometry height="70" width="300" x="860" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="60" parent="1" style="rounded=1;fillColor=#FFE6CC;strokeColor=#D6B656;fontFamily=Arial;fontSize=9;arcSize=4;" value="Replay Window Check  (IPsec-style, size = 64 slots)&#xa;seq &gt; max_seq → ACCEPT (new)  |  seq already seen → REJECT (replay)  |  seq &lt; max_seq−64 → REJECT (too old)" vertex="1">
+          <mxGeometry height="55" width="590" x="290" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="61" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#D6B656;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="340" as="sourcePoint" />
+            <mxPoint x="290" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="62" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#D6B656;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="340" as="sourcePoint" />
+            <mxPoint x="880" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="70" parent="1" style="rounded=1;fillColor=#FFFDE7;strokeColor=#F9A825;" value="" vertex="1">
+          <mxGeometry height="65" width="590" x="290" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="71" parent="1" style="text;html=1;fontFamily=Arial;fontSize=9;fontStyle=1;fontColor=#2E7D32;" value="Tag valid   →   deliver plaintext to application layer" vertex="1">
+          <mxGeometry height="20" width="570" x="300" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="72" parent="1" style="text;html=1;fontFamily=Arial;fontSize=9;fontStyle=1;fontColor=#C62828;" value="Tag invalid →   fail-closed: discard record, close socket immediately (no partial plaintext returned)" vertex="1">
+          <mxGeometry height="20" width="570" x="300" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="80" parent="1" style="rounded=1;fillColor=#F5F5F5;strokeColor=#666666;fontFamily=Arial;fontSize=9;align=left;" value="ENCRYPT:&#xa;nonce = iv_sc_base(8B) || seq_send(4B)&#xa;AAD   = msg_type(1B) || seq_send(4B)&#xa;→ AES-256-GCM encrypt(key=k_sc, 256-bit)" vertex="1">
+          <mxGeometry height="70" width="300" x="860" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="81" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;strokeColor=#888888;fontFamily=Arial;fontSize=9;fontColor=#444444;" value="Frame: len(4B) | msg_type(1B) | ciphertext | tag(16B)  →  overhead = 21B constant">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="625" as="sourcePoint" />
+            <mxPoint x="150" y="625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="90" parent="1" style="rounded=1;fillColor=#F5F5F5;strokeColor=#666666;fontFamily=Arial;fontSize=9;align=left;" value="DECRYPT:&#xa;nonce = iv_sc_base(8B) || seq_rcv(4B)&#xa;AAD   = msg_type(1B) || seq_rcv(4B)&#xa;→ AES-256-GCM decrypt(key=k_sc, 256-bit)" vertex="1">
+          <mxGeometry height="70" width="300" x="10" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="100" parent="1" style="rounded=1;fillColor=#D5E8D4;strokeColor=#82B366;fontFamily=Arial;fontSize=9;" value="Per-record overhead: 21 bytes constant regardless of payload  (16B GCM auth tag + 4B TCP length prefix + 1B msg_type)" vertex="1">
+          <mxGeometry height="35" width="590" x="290" y="740" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

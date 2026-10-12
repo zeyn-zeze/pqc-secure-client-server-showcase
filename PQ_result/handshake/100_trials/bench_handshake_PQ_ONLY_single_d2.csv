@@ -1,0 +1,7 @@
+step,duration_ns,duration_ms,msg_size_bytes,cpu_user_ms,cpu_sys_ms,mem_delta_mb,success,note
+send_client_hello,1428834,1.428834,10734,9.999999999999787,0.0,0.0,True,
+recv_verify_sh,57652405,57.652405,15229,70.00000000000028,0.0,0.01171875,True,
+send_kem_sign,20038456,20.038456,4417,19.999999999999574,0.0,0.0,True,
+derive_aes_key,7841752,7.841752,0,19.999999999999574,0.0,0.0,True,
+recv_server_verify,0,0.0,2,0,0,0,True,
+handshake_total,134056958,134.057,0,0,0,0,True,

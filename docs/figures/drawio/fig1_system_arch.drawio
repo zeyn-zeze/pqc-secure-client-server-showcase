@@ -1,0 +1,50 @@
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+  <root>
+    <mxCell id="0"/><mxCell id="1" parent="0"/>
+
+    <!-- TITLE -->
+    <mxCell id="2" value="System Architecture — PQC Secure Client-Server Protocol" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=14;fontStyle=1;fontColor=#1F4E79;" vertex="1" parent="1"><mxGeometry x="180" y="20" width="810" height="40" as="geometry"/></mxCell>
+
+    <!-- COLUMN HEADERS -->
+    <mxCell id="3" value="CLIENT" style="text;html=1;align=center;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#1F4E79;" vertex="1" parent="1"><mxGeometry x="100" y="70" width="280" height="30" as="geometry"/></mxCell>
+    <mxCell id="4" value="SERVER" style="text;html=1;align=center;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#1F4E79;" vertex="1" parent="1"><mxGeometry x="790" y="70" width="280" height="30" as="geometry"/></mxCell>
+
+    <!-- ROW 1: Application Layer -->
+    <mxCell id="10" value="&lt;b&gt;Application Layer&lt;/b&gt;&lt;br&gt;client.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontFamily=Arial;fontSize=11;arcSize=8;" vertex="1" parent="1"><mxGeometry x="60" y="110" width="280" height="60" as="geometry"/></mxCell>
+    <mxCell id="11" value="&lt;b&gt;Application Layer&lt;/b&gt;&lt;br&gt;server.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontFamily=Arial;fontSize=11;arcSize=8;" vertex="1" parent="1"><mxGeometry x="830" y="110" width="280" height="60" as="geometry"/></mxCell>
+    <mxCell id="12" value="" style="endArrow=block;startArrow=block;startFill=1;endFill=1;html=1;strokeColor=#D6B656;strokeWidth=1.5;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="140" as="sourcePoint"/><mxPoint x="830" y="140" as="targetPoint"/></mxGeometry></mxCell>
+
+    <!-- ROW 2: Handshake Layer -->
+    <mxCell id="20" value="&lt;b&gt;Handshake Layer&lt;/b&gt;&lt;br&gt;protocol/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;strokeColor=#C8A000;fontFamily=Arial;fontSize=11;arcSize=8;" vertex="1" parent="1"><mxGeometry x="60" y="200" width="280" height="60" as="geometry"/></mxCell>
+    <mxCell id="21" value="&lt;b&gt;Handshake Layer&lt;/b&gt;&lt;br&gt;protocol/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;strokeColor=#C8A000;fontFamily=Arial;fontSize=11;arcSize=8;" vertex="1" parent="1"><mxGeometry x="830" y="200" width="280" height="60" as="geometry"/></mxCell>
+
+    <!-- SECURITY BOX (center, spans rows 2-3) -->
+    <mxCell id="30" value="&lt;b&gt;security/&lt;/b&gt;&lt;br&gt;&lt;br&gt;cert_validator&lt;br&gt;revocation&lt;br&gt;identity_binding&lt;br&gt;cookie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D6B656;fontFamily=Arial;fontSize=10;arcSize=8;" vertex="1" parent="1"><mxGeometry x="505" y="195" width="160" height="140" as="geometry"/></mxCell>
+
+    <!-- Handshake ↔ Security arrows -->
+    <mxCell id="31" value="" style="endArrow=block;startArrow=block;startFill=1;endFill=1;html=1;strokeColor=#D6B656;strokeWidth=1.5;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="230" as="sourcePoint"/><mxPoint x="505" y="230" as="targetPoint"/></mxGeometry></mxCell>
+    <mxCell id="32" value="" style="endArrow=block;startArrow=block;startFill=1;endFill=1;html=1;strokeColor=#D6B656;strokeWidth=1.5;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="665" y="230" as="sourcePoint"/><mxPoint x="830" y="230" as="targetPoint"/></mxGeometry></mxCell>
+
+    <!-- ROW 3: Record Layer -->
+    <mxCell id="40" value="&lt;b&gt;Record Layer&lt;/b&gt;&lt;br&gt;record/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontFamily=Arial;fontSize=11;arcSize=8;" vertex="1" parent="1"><mxGeometry x="60" y="290" width="280" height="60" as="geometry"/></mxCell>
+    <mxCell id="41" value="&lt;b&gt;Record Layer&lt;/b&gt;&lt;br&gt;record/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontFamily=Arial;fontSize=11;arcSize=8;" vertex="1" parent="1"><mxGeometry x="830" y="290" width="280" height="60" as="geometry"/></mxCell>
+
+    <!-- Record ↔ Security arrows -->
+    <mxCell id="42" value="" style="endArrow=block;startArrow=block;startFill=1;endFill=1;html=1;strokeColor=#6C8EBF;strokeWidth=1.5;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="320" as="sourcePoint"/><mxPoint x="505" y="320" as="targetPoint"/></mxGeometry></mxCell>
+    <mxCell id="43" value="" style="endArrow=block;startArrow=block;startFill=1;endFill=1;html=1;strokeColor=#6C8EBF;strokeWidth=1.5;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="665" y="320" as="sourcePoint"/><mxPoint x="830" y="320" as="targetPoint"/></mxGeometry></mxCell>
+
+    <!-- ROW 4: Network Layer -->
+    <mxCell id="50" value="&lt;b&gt;Network Layer&lt;/b&gt;&lt;br&gt;network/ (TCP framing)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontFamily=Arial;fontSize=11;arcSize=8;" vertex="1" parent="1"><mxGeometry x="60" y="380" width="280" height="60" as="geometry"/></mxCell>
+    <mxCell id="51" value="&lt;b&gt;Network Layer&lt;/b&gt;&lt;br&gt;network/ (TCP framing)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontFamily=Arial;fontSize=11;arcSize=8;" vertex="1" parent="1"><mxGeometry x="830" y="380" width="280" height="60" as="geometry"/></mxCell>
+    <mxCell id="52" value="" style="endArrow=block;startArrow=block;startFill=1;endFill=1;html=1;strokeColor=#82B366;strokeWidth=1.5;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="410" as="sourcePoint"/><mxPoint x="830" y="410" as="targetPoint"/></mxGeometry></mxCell>
+
+    <!-- TCP label -->
+    <mxCell id="53" value="TCP (untrusted network channel)" style="text;html=1;align=center;fontFamily=Arial;fontSize=10;fontStyle=2;fontColor=#666666;" vertex="1" parent="1"><mxGeometry x="390" y="455" width="390" height="25" as="geometry"/></mxCell>
+
+    <!-- Layer labels right margin -->
+    <mxCell id="60" value="Layer 4" style="text;html=1;align=left;fontFamily=Arial;fontSize=9;fontColor=#888888;" vertex="1" parent="1"><mxGeometry x="1130" y="130" width="60" height="20" as="geometry"/></mxCell>
+    <mxCell id="61" value="Layer 3" style="text;html=1;align=left;fontFamily=Arial;fontSize=9;fontColor=#888888;" vertex="1" parent="1"><mxGeometry x="1130" y="220" width="60" height="20" as="geometry"/></mxCell>
+    <mxCell id="62" value="Layer 2" style="text;html=1;align=left;fontFamily=Arial;fontSize=9;fontColor=#888888;" vertex="1" parent="1"><mxGeometry x="1130" y="310" width="60" height="20" as="geometry"/></mxCell>
+    <mxCell id="63" value="Layer 1" style="text;html=1;align=left;fontFamily=Arial;fontSize=9;fontColor=#888888;" vertex="1" parent="1"><mxGeometry x="1130" y="400" width="60" height="20" as="geometry"/></mxCell>
+  </root>
+</mxGraphModel>

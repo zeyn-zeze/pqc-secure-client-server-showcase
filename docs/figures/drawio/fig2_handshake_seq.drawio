@@ -1,0 +1,161 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="aEHZKXPFl3Wj3ODWPBO4" name="Sayfa-1">
+    <mxGraphModel dx="490" dy="268" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="43" edge="1" parent="1" source="42" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;strokeColor=#AAAAAA;fontFamily=Arial;fontSize=8;exitX=1;exitY=0.41;exitDx=0;exitDy=0;exitPerimeter=0;" value="cert verify">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="242" as="sourcePoint" />
+            <mxPoint x="1000" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2" parent="1" style="text;html=1;align=center;fontFamily=Arial;fontSize=14;fontStyle=1;fontColor=#1F4E79;" value="Handshake Protocol — Sequence Diagram" vertex="1">
+          <mxGeometry height="35" width="770" x="200" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontFamily=Arial;fontSize=12;arcSize=8;" value="&lt;b&gt;Client&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="160" x="60" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontFamily=Arial;fontSize=12;arcSize=8;" value="&lt;b&gt;Server&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="160" x="560" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontFamily=Arial;fontSize=11;arcSize=8;" value="&lt;b&gt;CA&lt;br&gt;(trust anchor)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="160" x="960" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="20" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="110" as="sourcePoint" />
+            <mxPoint x="140" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="110" as="sourcePoint" />
+            <mxPoint x="640" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1040" y="110" as="sourcePoint" />
+            <mxPoint x="1040" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD966;strokeColor=#C8A000;fontFamily=Arial;fontSize=10;arcSize=4;" value="&lt;b&gt;Phase 1 — Mutual Authentication + PQ Key Establishment&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="660" x="230" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="40" edge="1" parent="1" source="10" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontFamily=Arial;fontSize=10;fontStyle=1;" target="11" value="① ClientHello">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="210" as="sourcePoint" />
+            <mxPoint x="640" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41" parent="1" style="text;html=1;align=center;fontFamily=Arial;fontSize=8;fontColor=#444444;" value="Fields: version_major(1B) | version_minor(1B) | kem_id(1B) | sig_id(1B) | cipher_id(1B) | client_nonce(16B) | cert_len(4B) | client_cert(var)" vertex="1">
+          <mxGeometry height="18" width="500" x="140" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="42" parent="1" style="rounded=1;fillColor=#F5F5F5;strokeColor=#666666;fontFamily=Arial;fontSize=8;align=left;" value="verify client_cert with CA pk" vertex="1">
+          <mxGeometry height="35" width="260" x="650" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="50" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;strokeColor=#D6B656;fontFamily=Arial;fontSize=10;fontStyle=1;exitX=0;entryX=1;" value="② Cookie (HMAC-SHA256)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="305" as="sourcePoint" />
+            <mxPoint x="140" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="51" parent="1" style="rounded=1;fillColor=#FFE6CC;strokeColor=#D6B656;fontFamily=Arial;fontSize=8;align=left;" value="DoS Mitigation: stateless HMAC cookie before any Kyber/Dilithium operation" vertex="1">
+          <mxGeometry height="35" width="280" x="10" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="52" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;strokeColor=#888888;fontFamily=Arial;fontSize=10;" value="Cookie echo">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="370" as="sourcePoint" />
+            <mxPoint x="640" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="53" parent="1" style="rounded=1;fillColor=#FFE6CC;strokeColor=#D6B656;fontFamily=Arial;fontSize=8;align=left;" value="Server: verify cookie (HMAC-SHA256, hmac.compare_digest) → proceed" vertex="1">
+          <mxGeometry height="30" width="300" x="650" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="60" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;entryX=1;fontFamily=Arial;fontSize=10;fontStyle=1;" value="③ ServerHello">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="450" as="sourcePoint" />
+            <mxPoint x="140" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="61" parent="1" style="text;html=1;align=center;fontFamily=Arial;fontSize=8;fontColor=#444444;" value="Fields: server_nonce(16B) | kem_id(1B) | kex_data_len(4B) | kyber_pk(1184B) | cert_len(4B) | cert_S(var) | sig_len(4B) | sig_S(var, Dilithium3~3293B)" vertex="1">
+          <mxGeometry height="20" width="530" x="140" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="62" parent="1" style="rounded=1;fillColor=#F5F5F5;strokeColor=#666666;fontFamily=Arial;fontSize=8;align=left;" value="Client:&#xa;• verify cert_S signature with CA pk&#xa;• check cert_S dates (notBefore/notAfter)&#xa;• verify sig_S over H(transcript) with Dilithium3&#xa;• Kyber-768 encapsulate(kyber_pk) → (ct 1088B, ss 32B)" vertex="1">
+          <mxGeometry height="80" width="310" x="10" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="63" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;strokeColor=#AAAAAA;fontFamily=Arial;fontSize=8;" value="cert verify">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="490" as="sourcePoint" />
+            <mxPoint x="960" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="70" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;fontFamily=Arial;fontSize=10;fontStyle=1;" value="④ ClientKeyExchangeAuth">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="590" as="sourcePoint" />
+            <mxPoint x="640" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="71" parent="1" style="text;html=1;align=center;fontFamily=Arial;fontSize=8;fontColor=#444444;" value="Fields: ct_len(4B) | ciphertext(1088B, Kyber) | client_id_len(4B) | client_id(var) | sig_len(4B) | sig_C(var, Dilithium3~3293B)" vertex="1">
+          <mxGeometry height="16" width="500" x="140" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="72" parent="1" style="rounded=1;fillColor=#F5F5F5;strokeColor=#666666;fontFamily=Arial;fontSize=8;align=left;" value="Server:&#xa;• Kyber-768 decapsulate(ct) → shared_secret (32B)&#xa;• verify cert_C identity binding (cert.id == claimed_id)&#xa;• verify sig_C over H(transcript) with Dilithium3" vertex="1">
+          <mxGeometry height="70" width="310" x="650" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="80" parent="1" style="rounded=1;fillColor=#DAE8FC;strokeColor=#2E75B6;fontFamily=Arial;fontSize=8;align=left;" value="Client: HKDF-SHA3-512(ikm=ss, salt=nonce_C||nonce_S||H(transcript), info=CS/SC) → k_cs(32B)+iv_cs(8B), k_sc(32B)+iv_sc(8B)" vertex="1">
+          <mxGeometry height="40" width="470" x="10" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="81" parent="1" style="rounded=1;fillColor=#DAE8FC;strokeColor=#2E75B6;fontFamily=Arial;fontSize=8;align=left;" value="Server: HKDF-SHA3-512(ikm=ss, salt=nonce_C||nonce_S||H(transcript), info=CS/SC) → k_cs(32B)+iv_cs(8B), k_sc(32B)+iv_sc(8B)" vertex="1">
+          <mxGeometry height="40" width="480" x="500" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="82" parent="1" style="text;html=1;align=center;fontFamily=Arial;fontSize=9;fontStyle=1;fontColor=#2E75B6;" value="⬡  Both parties derive identical keys independently — no key material transmitted" vertex="1">
+          <mxGeometry height="20" width="640" x="140" y="762" as="geometry" />
+        </mxCell>
+        <mxCell id="90" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;strokeColor=#27AE60;fontColor=#27AE60;fontFamily=Arial;fontSize=10;fontStyle=1;" value="⑤ ServerVerify (STATUS_OK, 1B)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="810" as="sourcePoint" />
+            <mxPoint x="140" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="91" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontFamily=Arial;fontSize=10;arcSize=4;" value="&lt;b&gt;Handshake Complete — Session Keys Established&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="660" x="230" y="835" as="geometry" />
+        </mxCell>
+        <mxCell id="92" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontFamily=Arial;fontSize=10;arcSize=4;" value="&lt;b&gt;Phase 2 — Record Layer (AES-256-GCM)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="35" width="660" x="230" y="885" as="geometry" />
+        </mxCell>
+        <mxCell id="93" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;html=1;fontFamily=Arial;fontSize=8;fontColor=#444444;" value="Encrypted Record  [msg_type(1B) | ciphertext | tag(16B)]  key=k_cs, nonce=iv_cs(8B)||seq(4B), AAD=msg_type||seq">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="945" as="sourcePoint" />
+            <mxPoint x="640" y="945" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="94" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;strokeColor=#888888;fontFamily=Arial;fontSize=8;fontColor=#444444;" value="Encrypted Record  [msg_type(1B) | ciphertext | tag(16B)]  key=k_sc, nonce=iv_sc(8B)||seq(4B), AAD=msg_type||seq">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="990" as="sourcePoint" />
+            <mxPoint x="140" y="990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="100" parent="1" style="rounded=1;fillColor=#F8F8F8;strokeColor=#AAAAAA;" value="" vertex="1">
+          <mxGeometry height="45" width="800" x="60" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="101" parent="1" style="text;html=1;fontFamily=Arial;fontSize=9;" value="→  Client to Server message" vertex="1">
+          <mxGeometry height="16" width="200" x="80" y="1055" as="geometry" />
+        </mxCell>
+        <mxCell id="102" parent="1" style="text;html=1;fontFamily=Arial;fontSize=9;" value="- - →  Server to Client / Response" vertex="1">
+          <mxGeometry height="16" width="230" x="310" y="1055" as="geometry" />
+        </mxCell>
+        <mxCell id="103" parent="1" style="text;html=1;fontFamily=Arial;fontSize=9;" value="Orange box = DoS protection  |  Blue box = Key derivation" vertex="1">
+          <mxGeometry height="16" width="270" x="570" y="1055" as="geometry" />
+        </mxCell>
+        <mxCell id="6jbKgKXIInveCnrV7hNC-104" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#AAAAAA;strokeWidth=1;entryX=-0.002;entryY=0.423;entryDx=0;entryDy=0;entryPerimeter=0;" target="42" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="640" y="240" as="sourcePoint" />
+            <mxPoint x="680" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
